@@ -1642,8 +1642,8 @@ import { assert, test } from 'vitest'
 
 test('assert.doesNotChange', () => {
   const obj = { val: 10 }
-  function fn() { obj.val += 2 };
-  assert.doesNotChange(fn, obj, 'val', 2)
+  function fn() { obj.val = 10 };
+  assert.doesNotChange(fn, obj, 'val', 'Value is not changed')
 })
 ```
 
