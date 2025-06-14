@@ -1408,8 +1408,8 @@ Asserts that `set1` and `set2` don’t have the same members in any order. Uses 
 ```ts
 import { assert, test } from 'vitest'
 
-test('assert.sameDeepMembers', () => {
-  assert.sameDeepMembers([{ a: 1 }, { b: 2 }, { c: 3 }], [{ b: 2 }, { a: 1 }, { c: 3 }], 'same deep members')
+test('assert.notSameDeepMembers', () => {
+  assert.notSameDeepMembers([{ a: 1 }, { b: 2 }, { c: 3 }], [{ b: 3 }, { a: 1 }, { d: 3 }], 'same deep members')
 })
 ```
 
@@ -1603,7 +1603,7 @@ test('assert.oneOf', () => {
 
 - **Type:** `<T>(modifier: Function, object: T, property: string, message?: string) => void`
 
-Asserts that a `modifier` changes the `object` of a `property`.
+Asserts that a `modifier` changes the `property` of a `object`.
 
 ```ts
 import { assert, test } from 'vitest'
